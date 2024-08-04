@@ -1,5 +1,7 @@
 # ToDo Frontend
 
+**Please refer to [REPORT.md](/REPORT.md) for documentation on the tasks completed.**
+
 This project is a simple ToDo frontend application that works with the ToDo backend application.
 
 Currently using:

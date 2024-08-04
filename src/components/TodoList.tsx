@@ -39,7 +39,7 @@ const TodoList: React.FC = () => {
    */
   const handleDelete = (id: number) => {
     fetch(`${process.env.TODO_BACKEND_API_URL}/todos/${id}`, {
-      method: 'POST',
+      method: 'DELETE',
     })
       .then(() => {
         // Remove the deleted todo from the state
@@ -64,15 +64,13 @@ const TodoList: React.FC = () => {
                 <Link to={`/todos/${todo.id}`} className={`flex-1 ${todo.completed ? 'line-through text-gray-600' : ''}`}>
                   {todo.title}
                 </Link>
-                {/*
                 <button
-                  onClick={() => alert('Feature not available. Coming Soon!')}
+                  onClick={() => navigate(`/edit/${todo.id}`)}
                   className="ml-4 px-4 py-2 text-blue-500 hover:text-blue-700 focus:outline-none border border-blue-500 rounded"
-                  aria-label="Delete todo"
+                  aria-label="Edit todo"
                 >
                   Edit
                 </button>
-                */}
                 <button
                   onClick={() => handleDelete(todo.id)}
                   className="ml-4 px-4 py-2 text-red-500 hover:text-red-700 focus:outline-none border border-red-500 rounded"
@@ -89,7 +87,7 @@ const TodoList: React.FC = () => {
             <div>
               <a
                 className="inline-block px-4 py-3 mt-4 rounded-md bg-blue-500 hover:bg-blue-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
-                onClick={() => navigate('add')}
+                onClick={() => navigate('/add')} // Navigate to /add instead of add
               >
                 Add New Todo
               </a>
