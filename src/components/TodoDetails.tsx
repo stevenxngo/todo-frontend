@@ -17,7 +17,6 @@ const ToDoDetails: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true); // State to indicate loading status
 
   useEffect(() => {
-    console.log(id);
     if (id) {
       fetch(`${process.env.TODO_BACKEND_API_URL}/todos/${id}`)
         .then(response => response.json())
